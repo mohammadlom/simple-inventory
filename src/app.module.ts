@@ -19,7 +19,7 @@ import { ProductModule } from './product/product.module';
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       retryAttempts: 3,
-      entities: ['dist/entities/*.entity{.ts,.js}'],
+      entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true
     }),
     AuthModule,

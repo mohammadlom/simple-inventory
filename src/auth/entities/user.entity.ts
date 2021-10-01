@@ -16,4 +16,17 @@ export class User extends BaseEntity {
 
     @Column({ type: 'varchar', length: 255 })
     mobile: string;
+
+
+    static async validateUser(name: string, mobile: string): Promise<any> {
+        const user = await this.findOne({
+            name,
+            mobile
+        });
+        if (user) {
+            return user;
+        }
+        return null;
+    }
+
 }
